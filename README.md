@@ -43,7 +43,6 @@ Desenvolva uma **REST API** que faça conversão de moedas.
 ## Pré-requisitos
 
 * Linguagem Go
-* Orientação a objetos
 * Mysql
 
 ## Plus
