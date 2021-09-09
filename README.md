@@ -1,8 +1,57 @@
-# #VemPraGenesis! - Backend Challenge
+# Vaga Padawan
 
-Desafio para os futuros programadores back-end da Genesis.
+Genesis está em busca de um(a) jedi para seu time de tecnologia.
 
-## Introdução
+# Para quem é essa vaga?
+
+Essa vaga é para você que está cansado de trabalhar sem ter uma motivação e deseja em trabalhar com produtos inovadores.
+
+# Requisitos
+
+
+1. Programar em Golang.
+2. Entender de Mysql.
+3. Entender o básico de docker.
+4. Entender o básico de grpc.
+
+ 
+# Mais sobre a vaga
+
+1. Salário: 5k PJ.
+2. Nível: Junior.
+3. Opção de ações da empresa.
+4. Remoto.
+
+# Sobre a Genesis
+
+Genesis é uma conta digital PJ com um superApp para empresa.
+Produtos da Genesis:
+
+1. Api para integração com todos os produtos .
+2. Conta Digital PJ.
+3. Gift  card digital.
+4. Emissão de nota fiscal.
+5. Sistema de pagamento com criptomoeda.
+6. Cambio.
+7. Moedas estrangeiras.
+
+
+# O que temos a mais
+ 
+
+1. Eventos com as comunidades.
+2. Hackspace em nossa sede.
+3. Espaço de games.
+4. Hackathon's.
+
+# Passo a passo
+
+1. Fazer teste
+2.  Cadastrar seus dados e o link do seu teste.
+4. Entrevista via meet
+
+
+# Teste
 
 Desenvolva uma **REST API** que faça conversão de moedas.
 
@@ -30,28 +79,3 @@ Desenvolva uma **REST API** que faça conversão de moedas.
     * criar uma rotina para salvar o dados para consultas futuras
 
    ```
-
-    
-
-## Instruções
-
-1. Efetue o fork deste repositório e crie um branch com o seu nome e sobrenome. (exemplo: fulano-dasilva)
-2. Após finalizar o desafio, crie um Pull Request.
-3. Aguarde algum contribuidor realizar o code review.
-4. pode usar framework de sua preferência
-
-## Pré-requisitos
-
-* Linguagem Go
-* Mysql
-
-## Plus
-
-* Testes unitários
-* Clean code
-* criar ambiente dentro do docker
-* criar docker-compose.yml
-
-## Dúvidas
-
-Em caso de dúvidas, crie uma issue.
