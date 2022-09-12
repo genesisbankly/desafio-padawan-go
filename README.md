@@ -35,14 +35,6 @@ Produtos da Genesis:
 7. Moedas estrangeiras.
 
 
-# O que temos a mais
- 
-
-1. Eventos com as comunidades.
-2. Hackspace em nossa sede.
-3. Espaço de games.
-4. Hackathon's.
-
 # Passo a passo
 
 1. Fazer teste
