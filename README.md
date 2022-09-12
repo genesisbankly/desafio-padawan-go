@@ -20,7 +20,6 @@ Essa vaga é para você que está cansado de trabalhar sem ter uma motivação e
 1. Salário: 5k PJ.
 2. Nível: Junior.
 3. Opção de ações da empresa.
-4. Remoto.
 
 # Sobre a Genesis
 
