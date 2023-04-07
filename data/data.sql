@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS PadawanDB;
+
+CREATE DATABASE PadawanDB;
+
+USE PadawanDB;
+
+CREATE TABLE conversionsLogs (
+  id INT NOT NULL AUTO_INCREMENT,
+  amount INT NOT NULL,
+  from_currency VARCHAR(3) NOT NULL,
+  to_currency VARCHAR(3) NOT NULL,
+  rate DECIMAL(10, 4) NOT NULL,
+  PRIMARY KEY(id)
+) ENGINE=INNODB;
