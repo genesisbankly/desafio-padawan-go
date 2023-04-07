@@ -34,6 +34,17 @@ func CurrencyConverter(w http.ResponseWriter, r *http.Request) {
 	from := params["from"]
 	to := params["to"]
 
+	allowedCurrencies := map[string]bool{
+		"BRL": true,
+		"USD": true,
+		"EUR": true,
+	}
+
+	if !allowedCurrencies[from] || !allowedCurrencies[to] {
+		http.Error(w, "Invalid currency code. Allowed codes are BRL, USD, and EUR.", http.StatusBadRequest)
+		return
+	}
+
 	rate, err := strconv.ParseFloat(params["rate"], 64)
 	if err != nil {
 		http.Error(w, "Invalid rate", http.StatusBadRequest)
@@ -60,5 +71,6 @@ func CurrencyConverter(w http.ResponseWriter, r *http.Request) {
 	execSQL.RegisterConversion(registerLog)
 
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(conversion)
 }
