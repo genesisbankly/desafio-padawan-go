@@ -2,7 +2,7 @@ package main
 
 import (
 	"challenge/controller"
-	"challenge/model"
+	"challenge/middlewares"
 	"fmt"
 	"log"
 	"net/http"
@@ -15,8 +15,8 @@ func main() {
 
 	fs := http.FileServer(http.Dir("public"))
 
-	router.HandleFunc("/exchange/{amount}/{from}/{to}/{rate}", controller.CurrencyConverter).Methods(http.MethodGet)
-	router.HandleFunc("/exchange", model.GetAllConversions).Methods(http.MethodGet)
+	router.HandleFunc("/exchange/{amount}/{from}/{to}/{rate}", middlewares.ValidateParams(controller.CurrencyConverter)).Methods(http.MethodGet)
+	router.HandleFunc("/exchange", controller.GetAllConversions).Methods(http.MethodGet)
 	router.Handle("/", fs).Methods(http.MethodGet)
 
 	fmt.Println("Executando na porta 8000")

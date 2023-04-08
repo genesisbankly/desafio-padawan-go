@@ -2,6 +2,7 @@ package service
 
 import (
 	"challenge/model"
+	"fmt"
 	"strconv"
 )
 
@@ -30,10 +31,11 @@ func ExchangeHandlerService(params map[string]string) (Conversion, error) {
 	conversion := Conversion{ConvertedAmount: convertedAmount, CurrencySymbol: symbol}
 	registerLog := model.RegisterLog{Amount: amount, From_currency: from, To_currency: to, Rate: rate}
 
-	err := model.RegisterConversion(registerLog)
+	idInsert, err := model.RegisterConversion(registerLog)
 	if err != nil {
 		return Conversion{}, err
 	}
 
+	fmt.Printf("Conversion record inserted successfully! Id: %d\n", idInsert)
 	return conversion, nil
 }
