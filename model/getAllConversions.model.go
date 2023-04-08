@@ -15,11 +15,19 @@ type RowExchange struct {
 	Rate          float64
 }
 
+type RowExchangeResponse struct {
+	ID            uint    `json:"id"`
+	Amount        float64 `json:"amount"`
+	From_currency string  `json:"from_currency"`
+	To_currency   string  `json:"to_currency"`
+	Rate          float64 `json:"rate"`
+}
+
 func (RowExchange) TableName() string {
 	return "conversionsLogs"
 }
 
-func FetchAllConversions() ([]RowExchange, error) {
+func FetchAllConversions() ([]RowExchangeResponse, error) {
 	db, err := connDB.Connection()
 	if err != nil {
 		return nil, err
@@ -31,5 +39,16 @@ func FetchAllConversions() ([]RowExchange, error) {
 		return nil, err
 	}
 
-	return conversions, nil
+	var responseConversions []RowExchangeResponse
+	for _, c := range conversions {
+		responseConversions = append(responseConversions, RowExchangeResponse{
+			ID:            c.ID,
+			Amount:        c.Amount,
+			From_currency: c.From_currency,
+			To_currency:   c.To_currency,
+			Rate:          c.Rate,
+		})
+	}
+
+	return responseConversions, nil
 }
