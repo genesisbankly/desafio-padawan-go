@@ -40,5 +40,5 @@ func RegisterConversion(registerLog RegisterLog) {
 		return
 	}
 
-	fmt.Println("Registro de conversão inserido com sucesso! Id: $d", idInsert)
+	fmt.Printf("Registro de conversão inserido com sucesso! Id: %d\n", idInsert)
 }

@@ -14,13 +14,6 @@ type Conversion struct {
 	CurrencySymbol  string  `json:"simboloMoeda"`
 }
 
-type registerLog struct {
-	amount        float64
-	from_currency string
-	to_currency   string
-	rate          float64
-}
-
 // This function receives the URL params and give a response in json with the respective answer or error
 func CurrencyConverter(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
