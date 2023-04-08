@@ -1,22 +1,17 @@
 package connDB
 
 import (
-	"database/sql"
-
-	_ "github.com/go-sql-driver/mysql" // MySQL's connection driver
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 )
 
 // Connection opens the connection with the database
-func Connection() (*sql.DB, error) {
-	stringConexao := "root:123456@tcp(127.0.0.1:3008)/PadawanDB?charset=utf8&parseTime=True&loc=Local"
-	db, erro := sql.Open("mysql", stringConexao)
+func Connection() (*gorm.DB, error) {
+	dsn := "root:123456@tcp(127.0.0.1:3008)/PadawanDB?charset=utf8&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
-	if erro != nil {
-		return nil, erro
-	}
-
-	if erro = db.Ping(); erro != nil {
-		return nil, erro
+	if err != nil {
+		return nil, err
 	}
 
 	return db, nil
