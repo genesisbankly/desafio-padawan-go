@@ -15,11 +15,6 @@ Essa vaga é para você que está cansado de trabalhar sem ter uma motivação e
 4. Entender o básico de grpc.
 
  
-# Mais sobre a vaga
-
-1. Salário: 5k PJ.
-2. Nível: Junior.
-3. Opção de ações da empresa.
 
 # Sobre a Genesis
 
