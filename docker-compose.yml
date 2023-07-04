@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    # Define o nome do container como "padawan_container"
+    container_name: "padawan_container"
+    # Usa a imagem "mysql:8" como base para o container
+    image: "mysql:8"
+    # Faz o mapeamento da porta 3008 no host para a porta 3306 no container
+    ports:
+      - 3008:3306
+    # Define a variável de ambiente para a senha do usuário root do MySQL
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    # Restarta a imagem caso algo a faça parar
+    restart: always
+    # Mapeia o arquivo "data.sql" do host para o container, que será executado durante a inicialização do banco de dados
+    volumes:
+      - ./data/data.sql:/docker-entrypoint-initdb.d/data.sql
+    # Define que a entrada padrão (stdin) do container seja mantida aberta (útil quando deseja interagir com o container como é o caso)
+    stdin_open: true
+    # Aloca um "pseudo" terminal para o container, útil para ajudar nas interações com o terminal
+    tty: true
